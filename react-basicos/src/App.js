@@ -8,6 +8,10 @@ import Padre from "./components/ComunicacionComponentes";
 import CicloVida from "./components/CicloVida";
 import AjaxApis from "./components/AjaxApis";
 import ContadorHooks from "./components/ContadorHooks";
+import ScrollHooks from "./components/ScrollHooks";
+import RelojHooks from "./components/RelojHooks";
+import AjaxHooks from "./components/AjaxHooks";
+import HooksPersonalizado from "./components/HooksPersonalizado";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -60,6 +64,14 @@ function App() {
           <AjaxApis />
           <hr />
           <ContadorHooks titulo="Seguidores" />
+          <hr />
+          <ScrollHooks />
+          <hr />
+          <RelojHooks />
+          <hr />
+          <AjaxHooks />
+          <hr />
+          <HooksPersonalizado />
         </section>
       </header>
     </div>
