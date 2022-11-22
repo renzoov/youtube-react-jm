@@ -15,6 +15,8 @@ import HooksPersonalizado from "./components/HooksPersonalizado";
 
 import logo from "./logo.svg";
 import "./App.css";
+import Referencias from "./components/Referencias";
+import Formularios from "./components/Formularios";
 
 function App() {
   return (
@@ -72,6 +74,10 @@ function App() {
           <AjaxHooks />
           <hr />
           <HooksPersonalizado />
+          <hr />
+          <Referencias />
+          <hr />
+          <Formularios />
         </section>
       </header>
     </div>
