@@ -1,8 +1,6 @@
 import CrudTableRow from "./CrudTableRow";
 
-const CrudTable = ({ data }) => {
-  data.map((el) => console.log(el));
-
+const CrudTable = ({ data, setDataToEdit, deleteData }) => {
   return (
     <div>
       <h3>Tabla de datos</h3>
@@ -21,7 +19,14 @@ const CrudTable = ({ data }) => {
               <td colSpan="3">Sin Datos</td>
             </tr>
           ) : (
-            data.map((el) => <CrudTableRow key={el.id} el={el} />)
+            data.map((el) => (
+              <CrudTableRow
+                key={el.id}
+                el={el}
+                setDataToEdit={setDataToEdit}
+                deleteData={deleteData}
+              />
+            ))
           )}
         </tbody>
       </table>
