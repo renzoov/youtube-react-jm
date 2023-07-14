@@ -1,13 +1,16 @@
-import CrudApp from "./components/CrudApp";
+import CrudApi from './components/CrudApi'
+import CrudApp from './components/CrudApp'
 
-function App() {
+function App () {
   return (
     <>
       <h1>Ejercicios con React</h1>
-      <CrudApp />
       <hr />
+      <CrudApi />
+      <hr />
+      <CrudApp />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

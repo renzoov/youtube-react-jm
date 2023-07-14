@@ -1,74 +1,75 @@
-import { useState, useEffect } from "react";
+/* eslint-disable no-undef */
+import { useState, useEffect } from 'react'
 
 const initialForm = {
-  name: "",
-  constellation: "",
-  id: null,
-};
+  name: '',
+  constellation: '',
+  id: null
+}
 
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
-  const [form, setForm] = useState(initialForm);
+  const [form, setForm] = useState(initialForm)
 
   useEffect(() => {
     if (dataToEdit) {
-      setForm(dataToEdit);
+      setForm(dataToEdit)
     } else {
-      setForm(initialForm);
+      setForm(initialForm)
     }
-  }, [dataToEdit]);
+  }, [dataToEdit])
 
   const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
+      [e.target.name]: e.target.value
+    })
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!form.name || !form.constellation) {
-      alert("Datos incompletos");
-      return;
+      alert('Datos incompletos')
+      return
     }
 
     if (form.id === null) {
-      createData(form);
+      createData(form)
     } else {
-      updateData(form);
+      updateData(form)
     }
 
-    handleReset();
-  };
+    handleReset()
+  }
 
   const handleReset = (e) => {
-    setForm(initialForm);
-    setDataToEdit(null);
-  };
+    setForm(initialForm)
+    setDataToEdit(null)
+  }
 
   return (
     <div>
-      <h3>{dataToEdit ? "Editar" : "Agregar"}</h3>
+      <h3>{dataToEdit ? 'Editar' : 'Agregar'}</h3>
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
-          name="name"
-          placeholder="Nombre"
+          type='text'
+          name='name'
+          placeholder='Nombre'
           value={form.name}
           onChange={handleChange}
         />
         <input
-          type="text"
-          name="constellation"
-          placeholder="Constelación"
+          type='text'
+          name='constellation'
+          placeholder='Constelación'
           value={form.constellation}
           onChange={handleChange}
         />
-        <input type="submit" value="Enviar" />
-        <input type="reset" value="Limpiar" onClick={handleReset} />
+        <input type='submit' value='Enviar' />
+        <input type='reset' value='Limpiar' onClick={handleReset} />
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default CrudForm;
+export default CrudForm

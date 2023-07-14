@@ -1,4 +1,4 @@
-import CrudTableRow from "./CrudTableRow";
+import CrudTableRow from './CrudTableRow'
 
 const CrudTable = ({ data, setDataToEdit, deleteData }) => {
   return (
@@ -14,24 +14,26 @@ const CrudTable = ({ data, setDataToEdit, deleteData }) => {
         </thead>
 
         <tbody>
-          {data.length === 0 ? (
-            <tr>
-              <td colSpan="3">Sin Datos</td>
-            </tr>
-          ) : (
-            data.map((el) => (
-              <CrudTableRow
-                key={el.id}
-                el={el}
-                setDataToEdit={setDataToEdit}
-                deleteData={deleteData}
-              />
-            ))
-          )}
+          {data.length === 0
+            ? (
+              <tr>
+                <td colSpan='3'>Sin Datos</td>
+              </tr>
+              )
+            : (
+                data.map((el) => (
+                  <CrudTableRow
+                    key={el.id}
+                    el={el}
+                    setDataToEdit={setDataToEdit}
+                    deleteData={deleteData}
+                  />
+                ))
+              )}
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default CrudTable;
+export default CrudTable

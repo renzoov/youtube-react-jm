@@ -1,5 +1,5 @@
 const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
-  let { name, constellation, id } = el;
+  const { name, constellation, id } = el
 
   return (
     <tr>
@@ -10,7 +10,7 @@ const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
         <button onClick={() => deleteData(id)}>Eliminar</button>
       </td>
     </tr>
-  );
-};
+  )
+}
 
-export default CrudTableRow;
+export default CrudTableRow
